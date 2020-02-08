@@ -5,7 +5,7 @@ import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
 import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
 
 const Header = styled.header`
-  width: ${props => props.theme.maxWidth};
+  width: 100%;
   border: 0;
   position: fixed;
   top: 0;

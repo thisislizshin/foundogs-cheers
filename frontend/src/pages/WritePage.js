@@ -1,10 +1,12 @@
 import React from "react";
+import Responsive from "components/common/Responsive";
+import Editor from "components/write/Editor";
 
 const WritePage = () => {
   return (
-    <div>
-      <div>WritePage</div>
-    </div>
+    <Responsive>
+      <Editor />
+    </Responsive>
   );
 };
 
