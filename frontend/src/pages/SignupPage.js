@@ -5,7 +5,7 @@ import AuthForm from "components/auth/AuthForm";
 const SignupPage = () => {
   return (
     <AuthTemplate>
-      <AuthForm />
+      <AuthForm type="signup" />
     </AuthTemplate>
   );
 };

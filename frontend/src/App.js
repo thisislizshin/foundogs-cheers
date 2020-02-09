@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Router } from "react-router-dom";
-import history from "./browserHistory";
+import { BrowserRouter } from "react-router-dom";
 import GlobalStyles from "styles/GlobalStyles";
 import Routes from "./Routes";
 import Footer from "components/Footer";
@@ -17,7 +16,7 @@ const App = () => {
   return (
     <>
       <GlobalStyles />
-      <Router history={history}>
+      <BrowserRouter>
         <>
           <Header />
           <Wrapper>
@@ -25,7 +24,7 @@ const App = () => {
           </Wrapper>
           <Footer />
         </>
-      </Router>
+      </BrowserRouter>
     </>
   );
 };

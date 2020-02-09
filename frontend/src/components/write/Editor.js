@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useEffect } from "react";
 import Quill from "quill";
 import "quill/dist/quill.bubble.css";
 import styled from "styled-components";
@@ -11,7 +11,7 @@ const EditorBlock = styled(Responsive)`
 `;
 
 const TitleInput = styled.input`
-  font-size: 3rem;
+  font-size: 2rem;
   outline: none;
   padding-bottom: 0.5rem;
   border: none;
@@ -55,21 +55,25 @@ const Editor = ({ title, body, onChangeField }) => {
 
     // quill에 text-change 이벤트 핸들러 등록
     // 참고: https://quilljs.com/docs/api/#events
-    // const quill = quillInstance.current;
-    // quill.on("text-change", (delta, oldDelta, source) => {
-    //   if (source === "user") {
-    //     onChangeField({ key: "body", value: quill.root.innerHTML });
-    //   }
-    // });
-  }, []);
+    const quill = quillInstance.current;
+    quill.on("text-change", (delta, oldDelta, source) => {
+      if (source === "user") {
+        onChangeField({ key: "body", value: quill.root.innerHTML });
+      }
+    });
+  }, [onChangeField]);
 
-  //   const onChangeTitle = e => {
-  //     onChangeField({ key: "title", value: e.target.value });
-  //   };
+  const onChangeTitle = e => {
+    onChangeField({ key: "title", value: e.target.value });
+  };
 
   return (
     <EditorBlock>
-      <TitleInput placeholder="제목을 입력하세요" />
+      <TitleInput
+        placeholder="제목을 입력하세요"
+        onChange={onChangeTitle}
+        value={title}
+      />
       <QuillWrapper>
         <div ref={quillElement} />
       </QuillWrapper>

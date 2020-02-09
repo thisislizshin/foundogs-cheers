@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
-import ExitToAppOutlinedIcon from "@material-ui/icons/ExitToAppOutlined";
-import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
 
 const Header = styled.header`
   width: 100%;
@@ -92,25 +90,25 @@ export default withRouter(({ history }) => {
   return (
     <Header>
       <HeaderWrapper>
-        <LeftColumn></LeftColumn>
-        <MiddleColumn>
+        <LeftColumn>
           <Title>
             <Link to="/">
               <FatText>FounDogs</FatText>
             </Link>
           </Title>
-        </MiddleColumn>
+        </LeftColumn>
+        <MiddleColumn></MiddleColumn>
         <RightColumn>
           <HeaderLink>
-            <Link to="/wallet">
-              <AccountBalanceWalletOutlinedIcon />
-            </Link>
+            <Link to="/write">글쓰기</Link>
           </HeaderLink>
           <Divider></Divider>
           <HeaderLink>
-            <Link to="/logout">
-              <ExitToAppOutlinedIcon />
-            </Link>
+            <Link to="/username">마이페이지</Link>
+          </HeaderLink>
+          <Divider></Divider>
+          <HeaderLink>
+            <Link to="/login">로그인</Link>
           </HeaderLink>
         </RightColumn>
       </HeaderWrapper>
