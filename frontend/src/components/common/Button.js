@@ -26,11 +26,11 @@ const StyledButton = styled.button`
     `}
 
   ${props =>
-    props.cyan &&
+    props.blue &&
     css`
-      background: ${props => props.theme.cyanColor};
+      background: ${props => props.theme.blueColor};
       &:hover {
-        background: ${props => props.theme.lightCyanColor};
+        background: ${props => props.theme.lightblueColor};
       }
     `}
 `;

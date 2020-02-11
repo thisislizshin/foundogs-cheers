@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
 
 const Header = styled.header`
-  width: 100%;
+  width: ${props => props.theme.maxCardWidth};
   border: 0;
   position: fixed;
   top: 0;
@@ -16,7 +16,16 @@ const Header = styled.header`
   align-items: center;
   padding: 0px 5px;
   z-index: 2;
-  height: 60px;
+  height: 4rem;
+`;
+
+const LogoImage = styled.img.attrs({
+  src:
+    "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbKOaeQ%2FbtqBS6LgGbU%2Fkdimkm8c9u6Mk63PaMzysK%2Fimg.png"
+})`
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const HeaderWrapper = styled.div`
@@ -93,7 +102,7 @@ export default withRouter(({ history }) => {
         <LeftColumn>
           <Title>
             <Link to="/">
-              <FatText>FounDogs</FatText>
+              <LogoImage />
             </Link>
           </Title>
         </LeftColumn>
