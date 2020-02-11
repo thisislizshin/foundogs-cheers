@@ -40,8 +40,13 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
+    "core.apps.CoreConfig",
     "users.apps.UsersConfig",
+    "pets.apps.PetsConfig",
+    "conversations.apps.ConversationsConfig",
 ]
+
+THIRD_PARTY_APPS = []
 
 INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
 

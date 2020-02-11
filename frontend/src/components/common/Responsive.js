@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const ResponsiveBlock = styled.div`
-  padding-left: 1rem;
-  padding-right: 1rem;
-  width: 1024px;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  width: ${props => props.theme.maxCardWidth};
   margin: 0 auto;
 
   @media (max-width: 1024px) {
-    width: 768px;
+    width: ${props => props.theme.maxCardWidth};
   }
   @media (max-width: 768px) {
     width: 100%;

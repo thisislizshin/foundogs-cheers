@@ -18,6 +18,7 @@ class User(AbstractUser):
     phone = models.CharField(max_length=13, null=True)
     gender = models.CharField(choices=GENDER_CHOICES, max_length=10, blank=True)
     birthdate = models.DateField(blank=True, null=True)
+    home_address = models.CharField(blank=True, max_length=255)
     is_verified = models.BooleanField(default=False)
 
     def __str__(self):
