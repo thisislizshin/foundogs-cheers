@@ -15,7 +15,6 @@ import MakersFeed from "components/MakersFeed";
 
 const Root = styled(Paper)`
   flex-grow: 0;
-  width: ${props => props.theme.maxCardWidth};
   min-height: 100%;
   background-color: ${props => props.theme.bgColor};
   box-shadow: none;

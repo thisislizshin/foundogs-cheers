@@ -6,8 +6,10 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
 
 contract MakersToken is ERC721Full {
     //***event 잘 모르겠음****//
-    //event DogsUploaded
-    //(uint256 indexed tokenId, address appliant, uint256 charge, string photo, string description, string serialNum, string birth, string gender, string breed);
+
+    event DogsUploaded
+    (uint256 indexed tokenId, string breed, string gender, string birth, string serialNum, string photo, string description);
+    
 
     //****모르는것****//
     constructor(string memory name, string memory symbol)
@@ -69,7 +71,8 @@ contract MakersToken is ERC721Full {
         MyDog[msg.sender] = tokenId;
         dogToOwner[tokenId] = msg.sender;
 
-        // emit DogsUploaded(tokenId, appliant, charge, photo, description, serialNum, birth, gender, breed);
+
+        emit DogsUploaded(tokenId, breed, gender, birth, serialNum, photo, description);
 
     }
 
@@ -151,5 +154,9 @@ contract MakersToken is ERC721Full {
         address payable payableTokenSeller = address(uint160(addressID));
         payableTokenSeller.transfer(msg.value);
     }
+    function getTotalDogsCount () public view returns (uint) {
+        return totaldogs;
+    }
+
 
 }

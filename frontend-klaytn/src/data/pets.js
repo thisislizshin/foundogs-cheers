@@ -68,7 +68,7 @@ export const pets = [
     birth: "2020-01-03",
     gender: "남",
     owner: "이재민",
-    breed: "래브라도 리트리버",
+    breed: "리트리버",
     serial_number: "000000000000",
     deposit: "0",
     is_adopted: false,
