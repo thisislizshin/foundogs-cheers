@@ -23,7 +23,7 @@ const updateFeed = tokenId => (dispatch, getState) => {
   console.log("updateFeed");
 
   MakersContract.methods
-    .getMakers(tokenId)
+    .getDogs1(tokenId)
     .call()
     .then(newMakers => {
       const {
@@ -37,7 +37,7 @@ const updateFeed = tokenId => (dispatch, getState) => {
 // TODO: Makers 리스트
 export const getFeed = () => dispatch => {
   MakersContract.methods
-    .getTotalMakersCount()
+    .getTotalDogsCount()
     .call()
     .then(totalMakersCount => {
       if (!totalMakersCount) {
@@ -46,7 +46,7 @@ export const getFeed = () => dispatch => {
       }
       const feed = [];
       for (let i = totalMakersCount; i > 0; i--) {
-        const product = MakersContract.methods.getMakers(i).call();
+        const product = MakersContract.methods.getDogs1(i).call();
         /**
          *  struct Makers{
               address[] buyer;
@@ -156,7 +156,7 @@ export const uploadItem = (
   );
 
   MakersContract.methods
-    .uploadMakers(breed, gender, birth, serialNum, photo, description)
+    .uploadDogs(breed, gender, birth, serialNum, photo, description)
     .send({
       from: getWallet().address,
       gas: "200000000"
@@ -178,7 +178,7 @@ export const uploadItem = (
       //   link: receipt.transactionHash
       // });
       toast.success("Received receipt!");
-      const tokenId = receipt.events.MakersUploaded.returnValues[0];
+      const tokenId = receipt.events.DogsUploaded.returnValues[0];
       console.log("-----------------");
       console.log("tokenId: ", tokenId);
       console.log("————————");
