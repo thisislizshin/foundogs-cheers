@@ -19,7 +19,7 @@ contract MakersToken is ERC721Full {
     mapping (address => uint256) public MyDog; //나의 강아지 토큰
     
     uint256 totaldogs; //totalsupply_ 강아지 토큰 총 개수
-    address FounDogs = '0xa52e40097628407d224beba260673fe831de5d16';
+    address FounDogs = "0xa52e40097628407d224beba260673fe831de5d16";
     
     struct Dog{
         uint256 tokenId;        //강아지 토큰
@@ -40,18 +40,18 @@ contract MakersToken is ERC721Full {
     // --------------------------------------------------
 
     function uploadDogs
-    (string memory breed, string memory gender, string memory birth, string memory serialNum, string memory photo, string description) public {
+    (string memory breed, string memory gender, string memory birth, string memory serialNum, string memory photo, string memory description) public {
         uint256 tokenId = totaldogs++;
         _mint(msg.sender, tokenId);
-        address[] memory appliant;
-        uint256[] memory charge;
+        address[] appliant;
+        uint256[] charge;
         Dog memory newDog = Dog({
             tokenId : tokenId, // 토큰id
             count : 0, //강아지 지원자 수
             appliant : appliant, // 강아지 지원자
             charge : charge, // 강아지 지원자 지원금액
             photo : photo, // 사진
-            description : description //설명
+            description : description, //설명
             serialNum : serialNum, // 핀번호
             birth : birth, // 생년월일
             gender : gender, // 성별
@@ -70,7 +70,7 @@ contract MakersToken is ERC721Full {
     // dog 하나에 대한 토큰 정보
     // --------------------------------------------------
     function getDogs (uint256 tokenId) public view
-    returns(uint256, address memory, uint256 memory, string memory, string memory, string memory, string memory, string memory) {
+    returns(uint256, address memoy, uint256 memory, string memory, string memory, string memory, string memory, string memory) {
         require(_Dogslist[tokenId].isadopted == false);
         return (
             _Dogslist[tokenId].tokenId,
@@ -98,7 +98,7 @@ contract MakersToken is ERC721Full {
         payableTokenSeller.transfer(msg.value); // FounDogs klay 송금
     }
 
-    }
+    
 
     // ----------------------------------------------------------------------------------------------------------------------------------
     //   원주인의 지원자 목록보기
