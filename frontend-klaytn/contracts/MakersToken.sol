@@ -6,18 +6,8 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
 
 contract MakersToken is ERC721Full {
     //***event 잘 모르겠음****//
-    event DogsUploaded(
-        uint256 indexed tokenId,
-        string count,
-        address appliant,
-        uint256 charge,
-        string photo,
-        string description,
-        string serialNum,
-        string birth,
-        string gender,
-        string breed
-    );
+    //event DogsUploaded
+    //(uint256 indexed tokenId, address appliant, uint256 charge, string photo, string description, string serialNum, string birth, string gender, string breed);
 
     //****모르는것****//
     constructor(string memory name, string memory symbol)
@@ -30,7 +20,6 @@ contract MakersToken is ERC721Full {
     mapping(address => uint256) public MyDog; //나의 강아지 토큰
 
     uint256 totaldogs; //totalsupply_ 강아지 토큰 총 개수
-    address FounDogs = "0xa52e40097628407d224beba260673fe831de5d16";
 
     struct Dog {
         uint256 tokenId; //강아지 토큰
@@ -56,7 +45,7 @@ contract MakersToken is ERC721Full {
         string memory birth,
         string memory serialNum,
         string memory photo,
-        string description
+        string memory description
     ) public {
         uint256 tokenId = totaldogs++;
         _mint(msg.sender, tokenId);
@@ -77,56 +66,53 @@ contract MakersToken is ERC721Full {
         });
 
         _DogsList[tokenId] = newDog;
-        MyDog[msg.sender].push(tokenId);
+        MyDog[msg.sender] = tokenId;
         dogToOwner[tokenId] = msg.sender;
 
-        emit DogsUploaded(
-            tokenId,
-            photo,
-            description,
-            serialNum,
-            birth,
-            gender,
-            breed
-        );
+        // emit DogsUploaded(tokenId, appliant, charge, photo, description, serialNum, birth, gender, breed);
+
     }
 
     // --------------------------------------------------
     // dog 하나에 대한 토큰 정보
     // --------------------------------------------------
-    function getDogs(uint256 tokenId)
+    function getDogs1(uint256 tokenId)
         public
         view
-        returns (
-            uint256,
-            address memory,
-            uint256 memory,
-            string memory,
-            string memory,
-            string memory,
-            string memory,
-            string memory
-        )
+        returns (uint256, address[] memory, string memory, string memory)
     {
-        require(_Dogslist[tokenId].isadopted == false);
+        //require (_DogsList[tokenId].isadopted == false);
         return (
-            _Dogslist[tokenId].tokenId,
-            _Dogslist[tokenId].appliant,
-            _Dogslist[tokenId].photo,
-            _Dogslist[tokenId].description,
-            _Dogslist[tokenId].serialNum,
-            _Dogslist[tokenId].birth,
-            _Dogslist[tokenId].gender,
-            _Dogslist[tokenId].breed,
-
+            _DogsList[tokenId].tokenId,
+            _DogsList[tokenId].appliant,
+            _DogsList[tokenId].photo,
+            _DogsList[tokenId].description
         );
+    }
+
+    function getDogs2(uint256 tokenId)
+        public
+        view
+        returns (string memory, string memory, string memory, string memory)
+    {
+        //require (_DogsList[tokenId].isadopted == false);
+        return (
+            _DogsList[tokenId].serialNum,
+            _DogsList[tokenId].birth,
+            _DogsList[tokenId].gender,
+            _DogsList[tokenId].breed
+        );
+
     }
 
     // ----------------------------------------------------------------------------------------------------------------------------------
     //   dog에 지원하기
     // ----------------------------------------------------------------------------------------------------------------------------------
 
-    function dogApply(uint256 tokenId, uint256 price) public payable {
+    function dogApply(uint256 tokenId, uint256 price, address FounDogs)
+        public
+        payable
+    {
         //dog 토큰에 지원자 추가하기
         _DogsList[tokenId].count += 1;
         _DogsList[tokenId].appliant.push(msg.sender);
@@ -144,7 +130,7 @@ contract MakersToken is ERC721Full {
         view
         returns (address[] memory, uint256[] memory)
     {
-        int256 tokenId = MyDog[msg.sender];
+        uint256 tokenId = MyDog[msg.sender];
         return (_DogsList[tokenId].appliant, _DogsList[tokenId].charge);
     }
 
@@ -153,7 +139,7 @@ contract MakersToken is ERC721Full {
     // ----------------------------------------------------------------------------------------------------------------------------------
     function selectAppliant(address Adopter) public {
         //token 소유권 이전
-        int256 tokenId = MyDog[msg.sender];
+        uint256 tokenId = MyDog[msg.sender];
         dogToOwner[tokenId] = Adopter;
         MyDog[Adopter] = tokenId;
     }
