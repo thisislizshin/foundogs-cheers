@@ -37,23 +37,8 @@ const Bottom = styled.div`
   justify-content: space-between;
 `;
 
-const IconContainer = styled.div`
-  align-self: center;
-  margin-top: 20px;
-  color: ${props => props.color};
-  cursor: pointer;
-`;
-
 const TopIconsContainer = styled.div`
   display: flex;
-`;
-
-const TopIconContainer = styled.div`
-  color: ${props => props.color};
-  cursor: pointer;
-  &:first-child {
-    margin-right: 10px;
-  }
 `;
 
 const Title = styled.span`
@@ -73,12 +58,7 @@ const ContentContainer = styled.div`
   padding: 10px;
 `;
 
-const Card13 = ({
-  topIcons,
-  topIconsColor = "white",
-  centerIcon,
-  centerIconSize = 3,
-  centerIconColor = "white",
+const PetCardPresenter = ({
   title,
   titleColor = "#1F2126",
   intro,
@@ -103,22 +83,13 @@ const Card13 = ({
   </Container>
 );
 
-Card13.propTypes = {
-  topIcons: PropTypes.arrayOf(PropTypes.string),
-  topIconsColor: PropTypes.string,
-  centerIcon: PropTypes.string,
-  centerIconSize: PropTypes.number,
-  centerIconColor: PropTypes.string,
+PetCardPresenter.propTypes = {
   title: PropTypes.string,
   titleColor: PropTypes.string,
   intro: PropTypes.string,
   introColor: PropTypes.string,
-  cta: PropTypes.string,
-  ctaFromBgColor: PropTypes.string,
-  ctaToBgColor: PropTypes.string,
-  ctaTextColor: PropTypes.string,
   bgPhoto: PropTypes.string,
   bgColor: PropTypes.string
 };
 
-export default Card13;
+export default PetCardPresenter;

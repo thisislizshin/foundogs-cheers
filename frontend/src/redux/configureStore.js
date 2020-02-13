@@ -5,11 +5,13 @@ import createSagaMiddleware from "redux-saga";
 import auth, { authSaga } from "redux/modules/auth";
 import loading from "redux/modules/loading";
 import write, { writeSaga } from "redux/modules/write";
+import makers from "redux/modules/makers";
 
 const rootReducer = combineReducers({
   auth,
   loading,
-  write
+  write,
+  makers
 });
 
 export function* rootSaga() {
