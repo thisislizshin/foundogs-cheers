@@ -44,12 +44,12 @@ export const donationParser = donation => {
 export const feedParser = feed => {
   const photoKeys = {
     0: "tokenId",
-    1: "photo",
-    2: "title",
+    1: "appliant",
+    2: "photo",
     3: "description",
-    4: "price",
-    5: "D_day",
-    6: "status"
+    4: "serialNum",
+    5: "birth",
+    6: "breed"
   };
 
   /**
@@ -64,6 +64,8 @@ export const feedParser = feed => {
    * Iterate feed array to rename all of photo objects' keys
    */
   const parsedFeed = feed.map(photo => renameKeys(photo, photoKeys));
+
+  console.log(parsedFeed);
 
   return parsedFeed;
 };

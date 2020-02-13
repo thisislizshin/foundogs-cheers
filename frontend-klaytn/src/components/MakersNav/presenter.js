@@ -86,6 +86,8 @@ export default props => {
 
   const { feed } = props;
 
+  console.log("제발", feed);
+
   const homeFeed = [];
   const FinishedFeed = [];
 
@@ -154,16 +156,16 @@ export default props => {
           </StyledTabs>
         </AppBar>
         <TabPanel value={value} index={0} theme={theme}>
-          <MakersFeed tabFeed={homeFeed} />
+          <MakersFeed tabFeed={feed} />
         </TabPanel>
         <TabPanel value={value} index={1} theme={theme}>
-          <MakersFeed tabFeed={homeFeed} />
+          <MakersFeed tabFeed={feed} />
         </TabPanel>
         <TabPanel value={value} index={2} theme={theme}>
-          <MakersFeed tabFeed={homeFeed} />
+          <MakersFeed tabFeed={feed} />
         </TabPanel>
         <TabPanel value={value} index={3} theme={theme}>
-          <MakersFeed tabFeed={FinishedFeed} />
+          <MakersFeed tabFeed={feed} />
         </TabPanel>
       </Root>
     </ThemeProvider>

@@ -3,7 +3,6 @@ import ProductInfo from "../ProductInfo";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import SliderSet from "components/SliderSet";
-import { pets } from "data/pets";
 import PetCard from "components/PetCard";
 import OptionBar from "components/OptionBar";
 
@@ -54,10 +53,9 @@ const FeedContainer = styled.div`
 `;
 
 const MakersFeed = props => {
-  // const { feed } = props;
+  const { feed } = props;
 
-  const feed = pets;
-  console.log(feed);
+  console.log("=================", feed);
 
   return (
     <Container>

@@ -7,9 +7,15 @@ import "openzeppelin-solidity/contracts/token/ERC721/ERC721Full.sol";
 contract MakersToken is ERC721Full {
     //***event 잘 모르겠음****//
 
-    event DogsUploaded
-    (uint256 indexed tokenId, string breed, string gender, string birth, string serialNum, string photo, string description);
-    
+    event DogsUploaded(
+        uint256 indexed tokenId,
+        string breed,
+        string gender,
+        string birth,
+        string serialNum,
+        string photo,
+        string description
+    );
 
     //****모르는것****//
     constructor(string memory name, string memory symbol)
@@ -71,8 +77,15 @@ contract MakersToken is ERC721Full {
         MyDog[msg.sender] = tokenId;
         dogToOwner[tokenId] = msg.sender;
 
-
-        emit DogsUploaded(tokenId, breed, gender, birth, serialNum, photo, description);
+        emit DogsUploaded(
+            tokenId,
+            breed,
+            gender,
+            birth,
+            serialNum,
+            photo,
+            description
+        );
 
     }
 
@@ -82,30 +95,25 @@ contract MakersToken is ERC721Full {
     function getDogs1(uint256 tokenId)
         public
         view
-        returns (uint256, address[] memory, string memory, string memory)
+        returns (
+            uint256,
+            address[] memory,
+            string memory,
+            string memory,
+            string memory,
+            string memory,
+            string memory
+        )
     {
         require (_DogsList[tokenId].isadopted == false);
         return (
             _DogsList[tokenId].tokenId,
             _DogsList[tokenId].appliant,
             _DogsList[tokenId].photo,
-            _DogsList[tokenId].description
-        );
-    }
-
-    function getDogs2(uint256 tokenId)
-        public
-        view
-        returns (string memory, string memory, string memory, string memory)
-    {
-        require (_DogsList[tokenId].isadopted == false);
-        return (
             _DogsList[tokenId].serialNum,
             _DogsList[tokenId].birth,
-            _DogsList[tokenId].gender,
             _DogsList[tokenId].breed
         );
-
     }
 
     // ----------------------------------------------------------------------------------------------------------------------------------
@@ -156,9 +164,9 @@ contract MakersToken is ERC721Full {
         address payable payableTokenSeller = address(uint160(addressID));
         payableTokenSeller.transfer(msg.value);
     }
-    function getTotalDogsCount () public view returns (uint256) {
+
+    function getTotalDogsCount() public view returns (uint256) {
         return totaldogs;
     }
-
 
 }
