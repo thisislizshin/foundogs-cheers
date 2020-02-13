@@ -84,7 +84,7 @@ contract MakersToken is ERC721Full {
         view
         returns (uint256, address[] memory, string memory, string memory)
     {
-        //require (_DogsList[tokenId].isadopted == false);
+        require (_DogsList[tokenId].isadopted == false);
         return (
             _DogsList[tokenId].tokenId,
             _DogsList[tokenId].appliant,
@@ -98,7 +98,7 @@ contract MakersToken is ERC721Full {
         view
         returns (string memory, string memory, string memory, string memory)
     {
-        //require (_DogsList[tokenId].isadopted == false);
+        require (_DogsList[tokenId].isadopted == false);
         return (
             _DogsList[tokenId].serialNum,
             _DogsList[tokenId].birth,
@@ -145,7 +145,9 @@ contract MakersToken is ERC721Full {
         uint256 tokenId = MyDog[msg.sender];
         dogToOwner[tokenId] = Adopter;
         MyDog[Adopter] = tokenId;
+        _DogsList[tokenId].isadopted = true;
     }
+
 
     // ----------------------------------------------------------------------------------------------------------------------------------
     // 강아지 분양 마감 시, 환불 함수 getappliant()실행해서 지원자 정보 얻기, 소유 받은사람 한테는 토큰 다시 주면 안됨
@@ -154,7 +156,7 @@ contract MakersToken is ERC721Full {
         address payable payableTokenSeller = address(uint160(addressID));
         payableTokenSeller.transfer(msg.value);
     }
-    function getTotalDogsCount () public view returns (uint) {
+    function getTotalDogsCount () public view returns (uint256) {
         return totaldogs;
     }
 
