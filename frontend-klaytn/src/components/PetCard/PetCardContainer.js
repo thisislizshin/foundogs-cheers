@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import PetCardPresenter from "./PetCardPresenter";
-import { pets } from "data/pets";
 
 const PetCardContainer = props => {
   const { pet } = props;
@@ -9,9 +8,12 @@ const PetCardContainer = props => {
     <PetCardPresenter
       breed={pet.breed}
       description={pet.description}
+      gender={pet.gender}
+      bgPhoto={pet.photo}
+      tokenId={pet.tokenId}
+      birth={pet.birth}
       centerIcon="fas fa-play-circle"
       topIcons={["far fa-heart", "fas fa-share"]}
-      bgPhoto={pet.photo}
     />
   );
 };

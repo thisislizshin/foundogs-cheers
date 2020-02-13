@@ -3,7 +3,7 @@ const BORDER_RADIUS = "20px";
 
 export default {
   maxWidth: "935px",
-  maxCardWidth: "640px",
+  maxCardWidth: "540px",
   minPageWidth: "320px",
   bgColor: "#FAFAFA",
   mainColor: "#fbae17",
