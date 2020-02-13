@@ -22,7 +22,7 @@ const FeedProduct = styled.div`
   position: relative;
   width: 100%;
   max-width: ${props => props.theme.maxCardWidth};
-  margin-bottom: 70px;
+  margin-bottom: 20px;
   &:last-child {
     margin-bottom: 0;
   }
@@ -48,7 +48,6 @@ const FeedContainer = styled.div`
   position: relative;
   width: 100%;
   min-height: 100%;
-  padding: 60px 0;
   display: flex;
   flex-direction: column;
   align-items: center;

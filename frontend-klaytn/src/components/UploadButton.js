@@ -15,6 +15,7 @@ const Container = styled.div`
   position: fixed;
   bottom: 10px;
   color: white;
+  z-index: 2;
 `;
 const theme = createMuiTheme({
   palette: {

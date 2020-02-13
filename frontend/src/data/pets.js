@@ -1,7 +1,7 @@
 export const pets = [
   {
     name: "짱돌이",
-    birthdate: "2019-12-6",
+    birth: "2019-12-6",
     gender: "남",
     owner: "짱아맘",
     breed: "포메라니안",
@@ -18,7 +18,7 @@ export const pets = [
   },
   {
     name: "또리",
-    birthdate: "2019-11-27",
+    birth: "2019-11-27",
     gender: "남",
     owner: "또치가족",
     breed: "말티즈",
@@ -35,7 +35,7 @@ export const pets = [
   },
   {
     name: "맥스",
-    birthdate: "2019-08-25",
+    birth: "2019-08-25",
     gender: "남",
     owner: "이주옥",
     breed: "시츄",
@@ -52,7 +52,7 @@ export const pets = [
   },
   {
     name: "초코",
-    birthdate: "2019-12-16",
+    birth: "2019-12-16",
     gender: "여",
     owner: "김원배",
     breed: "토이푸들",
@@ -69,7 +69,7 @@ export const pets = [
   },
   {
     name: "레오",
-    birthdate: "2020-01-03",
+    birth: "2020-01-03",
     gender: "남",
     owner: "이재민",
     breed: "래브라도 리트리버",
@@ -86,7 +86,7 @@ export const pets = [
   },
   {
     name: "꼬맹이",
-    birthdate: "2019-12-07",
+    birth: "2019-12-07",
     gender: "여",
     owner: "박동주",
     breed: "보더콜리",
@@ -103,7 +103,7 @@ export const pets = [
   },
   {
     name: "덕구",
-    birthdate: "2019-12-08",
+    birth: "2019-12-08",
     gender: "남",
     owner: "김흥수",
     breed: "진돗개",
@@ -120,7 +120,7 @@ export const pets = [
   },
   {
     name: "비비",
-    birthdate: "2019-11-29",
+    birth: "2019-11-29",
     gender: "여",
     owner: "이미영",
     breed: "비숑프리제",
@@ -137,7 +137,7 @@ export const pets = [
   },
   {
     name: "콜라",
-    birthdate: "2019-10-22",
+    birth: "2019-10-22",
     gender: "남",
     owner: "코코얌",
     breed: "닥스훈트",
@@ -154,7 +154,7 @@ export const pets = [
   },
   {
     name: "치즈",
-    birthdate: "2019-11-28",
+    birth: "2019-11-28",
     gender: "여",
     owner: "고희진",
     breed: "믹스",
@@ -171,7 +171,7 @@ export const pets = [
   },
   {
     name: "도비",
-    birthdate: "2019-06-02",
+    birth: "2019-06-02",
     gender: "남",
     owner: "박유정",
     breed: "도베르만",
@@ -188,7 +188,7 @@ export const pets = [
   },
   {
     name: "겨울이",
-    birthdate: "2019-11-16",
+    birth: "2019-11-16",
     gender: "남",
     owner: "황순옥",
     breed: "웰시코기",
