@@ -40,13 +40,16 @@ export const getFeed = () => dispatch => {
     .getTotalDogsCount()
     .call()
     .then(totalMakersCount => {
+      console.log("getFeed");
       if (!totalMakersCount) {
         console.log("없음");
         return [];
       }
       const feed = [];
       for (let i = totalMakersCount; i > 0; i--) {
+        console.log(i);
         const product = MakersContract.methods.getDogs1(i).call();
+        console.log("product", product);
         /**
          *  struct Makers{
               address[] buyer;

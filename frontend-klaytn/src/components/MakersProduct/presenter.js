@@ -66,6 +66,7 @@ const Title = styled.div`
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 20px;
+  margin-top: 100px;
 `;
 
 const PriceLine = styled.div``;
@@ -85,13 +86,12 @@ const MakersProduct = ({ userAddress, product }) => {
   const { ...item } = product;
   const {
     tokenId,
-    description,
-    status,
-    targetKlay,
-    title,
+    appliant,
     photo,
-    D_day,
-    price
+    description,
+    serialNum,
+    birth,
+    breed
   } = item;
 
   return (
@@ -100,16 +100,13 @@ const MakersProduct = ({ userAddress, product }) => {
         <Image key={tokenId} src={photo} showing={true} />
       </ImageContainer>
       <TitleAndPrice>
-        <Title>{title}</Title>
-        <PriceLine>
-          <Price>{price} KLAY</Price>
-          <EcoPower>{price * 10} Bean</EcoPower>
-        </PriceLine>
+        <Title>{breed}</Title>
+        <PriceLine></PriceLine>
       </TitleAndPrice>
 
       <ColoredLine />
 
-      <InfoContainer>
+      {/* <InfoContainer>
         {product && (
           <SliderSet
             targetKlay={targetKlay}
@@ -119,30 +116,30 @@ const MakersProduct = ({ userAddress, product }) => {
             tokenId={tokenId}
           />
         )}
-      </InfoContainer>
+      </InfoContainer> */}
 
       <ColoredLine />
 
-      <InfoContainer>
+      {/* <InfoContainer>
         {product && (
           <SubInfo tokenId={tokenId} D_day={D_day} targetKlay={targetKlay} />
         )}
-      </InfoContainer>
+      </InfoContainer> */}
 
       <ColoredLine />
 
       <InfoContainer>
-        <MakersDesc
+        {/* <MakersDesc
           tokenId={tokenId}
           description={description}
-          title={title}
+          title={breed}
           D_day={D_day}
-        />
+        /> */}
       </InfoContainer>
 
-      {userAddress === "0xb080c3403565f1d4dad3f705796f8f994d1c2105" && (
+      {/* {userAddress === "0xb080c3403565f1d4dad3f705796f8f994d1c2105" && (
         <DeleteButton tokenId={tokenId} />
-      )}
+      )} */}
 
       <OrderButton userAddress={userAddress} tokenId={tokenId} />
     </Container>
