@@ -30,6 +30,15 @@ const HeaderWrapper = styled.div`
   align-items: center;
 `;
 
+const LogoImage = styled.img.attrs({
+  src:
+    "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbKOaeQ%2FbtqBS6LgGbU%2Fkdimkm8c9u6Mk63PaMzysK%2Fimg.png"
+})`
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 const LeftColumn = styled.span`
   display: flex;
   align-items: center;
@@ -110,7 +119,7 @@ export default withRouter(({ history }) => {
         <MiddleColumn>
           <Makers>
             <Link to="/makers">
-              block<FatText>Coffee</FatText>
+              <LogoImage />
             </Link>
           </Makers>
         </MiddleColumn>

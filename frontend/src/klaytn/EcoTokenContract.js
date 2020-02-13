@@ -1,4 +1,4 @@
-import caver from "klaytn/caver";
+import caver from "klaytn/klaytn/caver";
 
 // const fs = require("fs");
 

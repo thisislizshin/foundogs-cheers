@@ -13,8 +13,7 @@ export const pets = [
       "안녕하세요~ 짱아맘입니다. 저희 짱아가 기특하게도 예쁜 아기들을 건강하게 순산했답니다. 귀여운 남자아이예요~ 좋은 가정에서 사랑받으며 컸으면 하는 맘이에요~ 접종도 완료 했습니다! 연락 주세요~ ",
     photo: " https://bit.ly/2usNCSC",
     is_neutralized: false,
-    weight: "1.1",
-    tokenId: 0
+    weight: "1.1"
   },
   {
     name: "또리",
@@ -30,8 +29,7 @@ export const pets = [
       "출산하고 2개월 된 아이들입니다. 건강하고 똥꼬발랄합니다. 지금은 사료도 먹고있습니다. 접종도 했구요 구충제까지 먹였습니다. 배변도 가려 너무너무 이쁩니다. 엄마 강아지보고 금방 배웠어요. 평생 사랑으로 이쁘게 키워주실 가족 기다리고 있습니다. ",
     photo: "https://bit.ly/2SgbvWi",
     is_neutralized: false,
-    weight: "1.2",
-    tokenId: 1
+    weight: "1.2"
   },
   {
     name: "맥스",
@@ -47,8 +45,7 @@ export const pets = [
       "분양할 기회를 놓쳐 키웠던 아이를 좋은 가정으로 보냅니다. 끝까지 행복하고 건강하게 키워주실분만 지원해주세요. ",
     photo: "https://bit.ly/31HEQMJ",
     is_neutralized: false,
-    weight: "2.6",
-    tokenId: 2
+    weight: "2.6"
   },
   {
     name: "초코",
@@ -64,8 +61,7 @@ export const pets = [
       "건강하고 활발한 토이푸들입니다. 이제 불린 사료 먹기 시작했습니다. 사랑으로 잘 키워주실분 연락주세요~",
     photo: "https://bit.ly/38jcJpl",
     is_neutralized: false,
-    weight: "1.1",
-    tokenId: 3
+    weight: "1.1"
   },
   {
     name: "레오",
@@ -81,8 +77,7 @@ export const pets = [
       "예쁘고 건강하게 잘 키우실 분에게 분양합니다. 정말 귀엽고 발랄한 아이예요. ",
     photo: "https://bit.ly/2SwkAcC",
     is_neutralized: false,
-    weight: "1.2",
-    tokenId: 4
+    weight: "1.2"
   },
   {
     name: "꼬맹이",
@@ -98,8 +93,7 @@ export const pets = [
       "아이들은 이제 갓 2개월 지났습니다. 접종은 DJPPL 2차 했고 장염(코로나)1차 했습니다. 첨부사진은 그대로 찍어 올린 것입니다~ 사랑으로 키워주실 분 연락주세요! ",
     photo: "https://bit.ly/37fJ5jH",
     is_neutralized: false,
-    weight: "1.2",
-    tokenId: 5
+    weight: "1.2"
   },
   {
     name: "덕구",
@@ -115,8 +109,7 @@ export const pets = [
       "골격, 생김새, 크기 모두 건강하고 이쁜 진돗개 부모 사이에서 9마리를 출산하여 모두 키울 수 없어 분양하려고 합니다. 현재 4주 좀 넘어서 가장 이쁠 때 입니다. 현재 모유 먹고 곧 사료 불려 먹이려고 하고 있습니다. 모두 건강하고 이쁘며 건강하게 키워주실 분 지원바랍니다. ",
     photo: "https://bit.ly/2OL7kjb",
     is_neutralized: false,
-    weight: "0.9",
-    tokenId: 6
+    weight: "0.9"
   },
   {
     name: "비비",
@@ -132,8 +125,7 @@ export const pets = [
       "건강한 엄마의 모유먹고 자란 미니사이즈 비숑입니다. 엄마가 챔피언 비숑프리제라서 튼튼할거예요 사랑으로 키워주실 분 연락주세요~",
     photo: "https://bit.ly/2tIZSOe",
     is_neutralized: false,
-    weight: "0.5",
-    tokenId: 7
+    weight: "0.5"
   },
   {
     name: "콜라",
@@ -149,8 +141,7 @@ export const pets = [
       "귀여운 닥스훈트 아기예요! 예방접종은 종합 5차, 코로나 장염 2차 완료했습니다. 건강한 아이구요 엄마 젖도 충분히 먹었습니다. 지금은 건사료 급식하고 있는데 관심 있으신 분들 연락주세요!",
     photo: "https://bit.ly/2vZOApB",
     is_neutralized: false,
-    weight: "1.0",
-    tokenId: 8
+    weight: "1.0"
   },
   {
     name: "치즈",
@@ -166,8 +157,7 @@ export const pets = [
       "아빠 치와와랑 엄마 말티즈 사이에서 태어난 예쁜 여자 아이입니다. 조용하고 아주 귀여워요~ 평생 행복하게 함께 해주실 분만 연락 부탁 드립니다.  ",
     photo: "https://bit.ly/37dekvP",
     is_neutralized: false,
-    weight: "1.2",
-    tokenId: 9
+    weight: "1.2"
   },
   {
     name: "도비",
@@ -183,8 +173,7 @@ export const pets = [
       "8개월 된 아가 개인적인 사정으로 분양 보냅니다. 더 좋은 환경에서 사랑으로 예쁘게 키워주실 분 연락주세요. ",
     photo: "https://bit.ly/37lj2HD",
     is_neutralized: false,
-    weight: "18",
-    tokenId: 10
+    weight: "18"
   },
   {
     name: "겨울이",
@@ -200,7 +189,6 @@ export const pets = [
       "애교도 많고 아주 튼튼한 웰시코기 3개월 거의 다 된 아가입니다. 엄마 아빠 모두 웰시코기입니다. 아주 활달하고 귀여워요  꼭 좋은 분께 분양 보내고 싶습니다. 사랑과 관심으로 평생을 함께 해주실 분 연락 기다리겠습니다.",
     photo: "https://bit.ly/2vqPg72",
     is_neutralized: false,
-    weight: "1.1",
-    tokenId: 11
+    weight: "1.1"
   }
 ];

@@ -107,7 +107,7 @@ const MakersProduct = ({ userAddress, product }) => {
         </PriceLine>
       </TitleAndPrice>
 
-      {/* <ColoredLine />
+      <ColoredLine />
 
       <InfoContainer>
         {product && (
@@ -121,13 +121,13 @@ const MakersProduct = ({ userAddress, product }) => {
         )}
       </InfoContainer>
 
-      <ColoredLine /> */}
-      {/* 
+      <ColoredLine />
+
       <InfoContainer>
         {product && (
           <SubInfo tokenId={tokenId} D_day={D_day} targetKlay={targetKlay} />
         )}
-      </InfoContainer> */}
+      </InfoContainer>
 
       <ColoredLine />
 

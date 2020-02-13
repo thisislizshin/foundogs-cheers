@@ -3,19 +3,25 @@ import UploadProduct from "./presenter";
 import imageCompression from "utils/imageCompression";
 import ui from "utils/ui";
 import useInput from "hooks/useInput";
-import makerApi from "../../api/maker";
 
 const Container = props => {
-  const title = useInput("");
+  const [gender, setGender] = useState("");
+  const [breed, setBreed] = useState("");
+
+  const handleChange = event => {
+    setGender(event.target.value);
+  };
+
+  const handleChangeBreed = event => {
+    setBreed(event.target.value);
+  };
+
+  const serialNum = useInput("");
+  const photo = useInput("");
   const description = useInput("");
-  const targetKlay = useInput("");
-  const price = useInput("");
-  const filePath = useInput("");
 
   const { uploadItem } = props;
-  const [isCompressing, setIsCompressing] = useState(false);
-
-  const [D_day] = useState("");
+  // const [isCompressing, setIsCompressing] = useState(false);
 
   // const MAX_IMAGE_SIZE = 30000; // 30KB
   // const MAX_IMAGE_SIZE_MB = 0.03; // 30KB
@@ -62,11 +68,11 @@ const Container = props => {
   const handleSubmit = e => {
     e.preventDefault();
 
-    const titleValue = title.value;
+    const serialNumValue = serialNum.value;
+    const photoValue = photo.value;
     const descriptionValue = description.value;
-    const targetKlayValue = targetKlay.value;
-    const priceValue = price.value;
-    const filePathValue = filePath.value;
+
+    // const filePathValue = filePath.value;
 
     // makerApi.register({
     //   title: titleValue,
@@ -79,12 +85,12 @@ const Container = props => {
 
     try {
       uploadItem(
-        filePathValue,
-        titleValue,
-        descriptionValue,
-        targetKlayValue,
+        breed,
+        gender,
         selectedDate,
-        priceValue
+        serialNumValue,
+        photoValue,
+        descriptionValue
       );
     } catch (error) {}
 
@@ -110,14 +116,16 @@ const Container = props => {
   return (
     <UploadProduct
       handleSubmit={handleSubmit}
-      filePath={filePath}
-      title={title}
+      breed={breed}
+      gender={gender}
+      serialNum={serialNum}
+      photo={photo}
       description={description}
-      targetKlay={targetKlay}
-      price={price}
-      D_day={selectedDate}
       handleDateChange={handleDateChange}
       selectedDate={selectedDate}
+      handleChange={handleChange}
+      gender={gender}
+      handleChangeBreed={handleChangeBreed}
     />
   );
 };

@@ -137,26 +137,26 @@ export const removeMakers = tokenId => dispatch => {
 // ----------------------------------------------------------------
 
 export const uploadItem = (
-  filePath,
-  title,
-  description,
-  targetKlay,
-  D_day,
-  price
+  breed,
+  gender,
+  birth,
+  serialNum,
+  photo,
+  description
 ) => dispatch => {
   console.log(
     `
-    filepath   : ${filePath} 
-    title      : ${title}
-    description: ${description}
-    targetKlay : ${targetKlay}
-    D_day      : ${D_day}
-    price      : ${price}
+    breed   : ${breed} 
+    gender      : ${gender}
+    birth: ${birth}
+    serialNum : ${serialNum}
+    photo      : ${photo}
+    description      : ${description}
     `
   );
 
   MakersContract.methods
-    .uploadMakers(filePath, title, description, targetKlay, D_day, price)
+    .uploadMakers(breed, gender, birth, serialNum, photo, description)
     .send({
       from: getWallet().address,
       gas: "200000000"

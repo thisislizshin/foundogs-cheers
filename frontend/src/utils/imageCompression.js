@@ -1,4 +1,4 @@
-import { drawImageInCanvas, getDataUrlFromFile, getFilefromDataUrl, loadImage } from 'utils/imageUtils'
+import { drawImageInCanvas, getDataUrlFromFile, getFilefromDataUrl, loadImage } from 'utils/utils/imageUtils'
 
 async function imageCompression(file, maxSizeMB = Number.POSITIVE_INFINITY, maxWidthOrHeight) {
   if (!(file instanceof Blob || file instanceof File)) {

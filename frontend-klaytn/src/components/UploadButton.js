@@ -14,11 +14,12 @@ const Container = styled.div`
   width: ${props => props.theme.maxCardWidth};
   position: fixed;
   bottom: 10px;
+  color: white;
 `;
 const theme = createMuiTheme({
   palette: {
-    primary: { main: "#17202E" },
-    secondary: { main: "#17202E" }
+    primary: { main: "#fbae17" },
+    secondary: { main: "#fbae17" }
   }
 });
 

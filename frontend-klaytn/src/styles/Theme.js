@@ -6,6 +6,7 @@ export default {
   maxCardWidth: "640px",
   minPageWidth: "320px",
   bgColor: "#FAFAFA",
+  mainColor: "#fbae17",
   borderGrey: "#eaeaea",
   lightGrey: "#e1e1e1",
   middleGrey: "cccccc",

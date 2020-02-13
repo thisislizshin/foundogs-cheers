@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Input from "components/Input";
 import InputFile from "components/InputFile";
 import Button from "components/Button";
@@ -11,6 +11,11 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
 } from "@material-ui/pickers";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
 
 const StyledKeyboardDatePicker = styled(KeyboardDatePicker)`
   font-weight: 500;
@@ -22,7 +27,7 @@ const Container = styled.div``;
 const Form = styled.form``;
 
 const StyledButton = styled(Button)`
-  background-color: ${props => props.theme.HeaderColor};
+  background-color: ${props => props.theme.mainColor};
   margin-top: 30px;
 `;
 
@@ -48,69 +53,129 @@ const Textarea = styled(TextareaAutosize)`
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans";
 `;
 
-const PriceWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+const DateWrapper = styled.div`
+  margin-bottom: 30px;
 `;
 
-const Klay = styled.span`
-  margin-top: 35px;
-  font-size: 16px;
-  margin-left: 10px;
-  padding-right: 40px;
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: -8px;
+`;
 
-  &:last-child {
-    padding-right: 0px;
+const Gender = styled.div`
+  width: 100%;
+  margin-bottom: 10px;
+`;
+
+const Breed = styled.div`
+  margin-bottom: 10px;
+  width: 90%;
+`;
+
+const useStyles = makeStyles(theme => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    width: 250
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2)
   }
-`;
-
-const KlayInput = styled(Input)`
-  text-align: right;
-  font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 25px;
-`;
+}));
 
 const UploadProduct = ({
   handleSubmit,
-  filePath,
-  title,
+  breed,
+  gender,
+  serialNum,
+  photo,
   description,
-  targetKlay,
-  price,
+  handleDateChange,
   selectedDate,
-  handleDateChange
+  handleChange,
+  handleChangeBreed
 }) => {
+  const classes = useStyles();
+
   return (
     <Container>
       <Form>
-        <Input label="상품 정보" placeholder={"상품 이름"} {...title} />
-        <Input placeholder={""} type="hidden" {...filePath} />
-        <Textarea placeholder={"상세 설명"} {...description} />
-        <PriceWrapper>
+        <Wrapper>
+          <Breed>
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                shrink
+                id="demo-simple-select-placeholder-label-label"
+              >
+                품종
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={breed}
+                onChange={handleChangeBreed}
+              >
+                <MenuItem value={"불독"}>불독</MenuItem>
+                <MenuItem value={"치와와"}>치와와</MenuItem>
+                <MenuItem value={"푸들"}>푸들</MenuItem>
+                <MenuItem value={"닥스훈트"}>닥스훈트</MenuItem>
+                <MenuItem value={"믹스견"}>믹스견</MenuItem>
+                <MenuItem value={"포메라니안"}>포메라니안</MenuItem>
+              </Select>
+            </FormControl>
+          </Breed>
+
+          {/* <PriceWrapper>
           <KlayInput label="상품 가격" placeholder={"0"} {...price} />
           <Klay>KLAY</Klay>
-          <KlayInput label="수량" placeholder={"0"} {...targetKlay} />
-          <Klay>EA</Klay>
-        </PriceWrapper>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <Grid container justify="left">
-            <StyledKeyboardDatePicker
-              className="D_day"
-              disableToolbar
-              format="yyyy년 MM월 dd일"
-              margin="normal"
-              id="date-picker-dialog"
-              label="상품 등록일"
-              value={selectedDate}
-              onChange={handleDateChange}
-              KeyboardButtonProps={{
-                "aria-label": "change date"
-              }}
-            />
-          </Grid>
-        </MuiPickersUtilsProvider>
-        <Input label="image" placeholder={"image"} {...filePath} />
+        </PriceWrapper> */}
+          <Gender>
+            <FormControl className={classes.formControl}>
+              <InputLabel
+                shrink
+                id="demo-simple-select-placeholder-label-label"
+              >
+                성별
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={gender}
+                onChange={handleChange}
+              >
+                <MenuItem value={"남"}>남</MenuItem>
+                <MenuItem value={"여"}>여</MenuItem>
+              </Select>
+            </FormControl>
+          </Gender>
+        </Wrapper>
+        <DateWrapper>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <Grid container justify="left">
+              <StyledKeyboardDatePicker
+                className="D_day"
+                disableToolbar
+                format="yyyy년 MM월 dd일"
+                margin="normal"
+                id="date-picker-dialog"
+                label="강아지 생년월일"
+                value={selectedDate}
+                onChange={handleDateChange}
+                KeyboardButtonProps={{
+                  "aria-label": "change date"
+                }}
+              />
+            </Grid>
+          </MuiPickersUtilsProvider>
+        </DateWrapper>
+        <Input
+          label="동물등록번호"
+          placeholder={"동물등록번호"}
+          {...serialNum}
+        />
+        <Input label="image" placeholder={"image"} {...photo} />
+        <Textarea placeholder={"상세 설명"} {...description} />
 
         {/* <InputFile
           className="UploadPhoto__file"

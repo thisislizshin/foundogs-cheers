@@ -16,13 +16,13 @@ const Container = styled.div`
 
 const LogoImage = styled.img.attrs({
   src:
-    "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FSLVsC%2Fbtqz4LHsAH7%2F74SG5iB0IgJsKnk5H3lfN1%2Fimg.png"
+    "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbKOaeQ%2FbtqBS6LgGbU%2Fkdimkm8c9u6Mk63PaMzysK%2Fimg.png"
 })`
   width: 304px;
-  height: 60px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
+  margin-top: 20px;
 `;
 
 const LoginInput = styled(Input)`
