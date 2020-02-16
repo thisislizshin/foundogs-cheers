@@ -28,17 +28,6 @@ const KlayBalance = styled.div`
   padding-right: 75px;
 `;
 
-const BeanPower = styled.div`
-  height: 50px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 50px;
-  padding-left: 75px;
-  padding-right: 75px;
-`;
-
 const Span = styled.span`
   font-size: 18px;
   font-weight: 600;
@@ -75,21 +64,8 @@ const IconDesc = styled.div`
   cursor: pointer;
 `;
 
-const Balance = styled.div`
-  margin-top: 10px;
-  color: ${props => props.theme.lightGreen};
-  font-weight: 600;
-  font-size: 16px;
-  cursor: pointer;
-`;
-
 const GreenText = styled.span`
   color: ${props => props.theme.lightGreen};
-  font-size: 28px;
-`;
-
-const BrownText = styled.span`
-  color: ${props => props.theme.darkBrown};
   font-size: 28px;
 `;
 
@@ -127,19 +103,13 @@ class AccountCard extends Component {
             <GreenText>{balanceFloor} </GreenText> KLAY
           </Span>
         </KlayBalance>
-        <BeanPower>
-          <Span>Bean Power</Span>
-          <Span>
-            <BrownText>{this.state.ecoPower} </BrownText> BEAN
-          </Span>
-        </BeanPower>
         <EcoData>
           <Item>
             <IconContainer>
               <CardGiftcardRoundedIcon style={{ fontSize: 40 }} />
             </IconContainer>
             <IconDescContainer>
-              <IconDesc>Bean Power</IconDesc>
+              <IconDesc>Kit</IconDesc>
             </IconDescContainer>
           </Item>
           <Item>

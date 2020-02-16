@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import ListAltIcon from "@material-ui/icons/ListAlt";
-import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import MoneyIcon from "@material-ui/icons/Money";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import { Link } from "react-router-dom";
+import PetsIcon from "@material-ui/icons/Pets";
 
 const Container = styled.div`
   background-color: ${props => props.theme.bgColor};
@@ -62,16 +62,16 @@ export default () => {
           </IconContainer>
           <Link to={`/makers`}>
             <IconDescContainer>
-              <IconDesc>주문목록</IconDesc>
+              <IconDesc>지원목록</IconDesc>
             </IconDescContainer>
           </Link>
         </Col>
         <Col>
           <IconContainer>
-            <LocalShippingIcon style={{ fontSize: 40 }} />
+            <PetsIcon style={{ fontSize: 40 }} />
           </IconContainer>
           <IconDescContainer>
-            <IconDesc>배송현황</IconDesc>
+            <IconDesc>펫용품</IconDesc>
           </IconDescContainer>
         </Col>
         <Col>

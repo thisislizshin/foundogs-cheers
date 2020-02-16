@@ -65,7 +65,5 @@ export const feedParser = feed => {
    */
   const parsedFeed = feed.map(photo => renameKeys(photo, photoKeys));
 
-  console.log(parsedFeed);
-
   return parsedFeed;
 };

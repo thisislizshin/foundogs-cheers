@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import UploadProduct from "./presenter";
-import imageCompression from "utils/imageCompression";
 import ui from "utils/ui";
 import useInput from "hooks/useInput";
 

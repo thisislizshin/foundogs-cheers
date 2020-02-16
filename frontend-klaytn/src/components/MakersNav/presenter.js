@@ -28,7 +28,7 @@ const StyledTabs = styled(Tabs)`
 `;
 
 const StyledTab = styled(Tab)`
-  width: 20%;
+  width: 30%;
 `;
 
 const StyledBox = styled(Box)`
@@ -85,8 +85,6 @@ export default props => {
   const [value, setValue] = useState(0);
 
   const { feed } = props;
-
-  console.log("제발", feed);
 
   const homeFeed = [];
   const FinishedFeed = [];
@@ -150,9 +148,8 @@ export default props => {
             centered
           >
             <StyledTab label="홈" {...a11yProps(0)} />
-            <StyledTab label="신상품" {...a11yProps(1)} />
-            <StyledTab label="베스트" {...a11yProps(2)} />
-            <StyledTab label="쇼핑" {...a11yProps(3)} />
+            <StyledTab label="상점" {...a11yProps(1)} />
+            <StyledTab label="MY" {...a11yProps(2)} />
           </StyledTabs>
         </AppBar>
         <TabPanel value={value} index={0} theme={theme}>
@@ -162,9 +159,6 @@ export default props => {
           <MakersFeed tabFeed={feed} />
         </TabPanel>
         <TabPanel value={value} index={2} theme={theme}>
-          <MakersFeed tabFeed={feed} />
-        </TabPanel>
-        <TabPanel value={value} index={3} theme={theme}>
           <MakersFeed tabFeed={feed} />
         </TabPanel>
       </Root>

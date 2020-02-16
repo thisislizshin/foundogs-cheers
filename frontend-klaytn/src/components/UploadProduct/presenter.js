@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Input from "components/Input";
-import InputFile from "components/InputFile";
 import Button from "components/Button";
 import styled from "styled-components";
 import TextareaAutosize from "react-autosize-textarea";
@@ -122,6 +121,12 @@ const UploadProduct = ({
                 <MenuItem value={"닥스훈트"}>닥스훈트</MenuItem>
                 <MenuItem value={"믹스견"}>믹스견</MenuItem>
                 <MenuItem value={"포메라니안"}>포메라니안</MenuItem>
+                <MenuItem value={"시바견"}>시바견</MenuItem>
+                <MenuItem value={"말티즈"}>말티즈</MenuItem>
+                <MenuItem value={"비숑"}>비숑</MenuItem>
+                <MenuItem value={"웰시코기"}>웰시코기</MenuItem>
+                <MenuItem value={"시츄"}>시츄</MenuItem>
+                <MenuItem value={"닥스훈트"}>닥스훈트</MenuItem>
               </Select>
             </FormControl>
           </Breed>

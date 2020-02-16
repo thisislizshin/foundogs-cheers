@@ -103,10 +103,6 @@ const Makers = styled.span`
   }
 `;
 
-const FatText = styled.span`
-  font-weight: 900;
-`;
-
 export default withRouter(({ history }) => {
   return (
     <Header>

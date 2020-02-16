@@ -47,22 +47,7 @@ export const pets = [
     is_neutralized: false,
     weight: "2.6"
   },
-  {
-    name: "초코",
-    birth: "2019-12-16",
-    gender: "여",
-    owner: "김원배",
-    breed: "토이푸들",
-    serial_number: "000000000000",
-    deposit: "0",
-    is_adopted: false,
-    nft_hash: "000000000000",
-    description:
-      "건강하고 활발한 토이푸들입니다. 이제 불린 사료 먹기 시작했습니다. 사랑으로 잘 키워주실분 연락주세요~",
-    photo: "https://bit.ly/38jcJpl",
-    is_neutralized: false,
-    weight: "1.1"
-  },
+
   {
     name: "레오",
     birth: "2020-01-03",
@@ -95,22 +80,7 @@ export const pets = [
     is_neutralized: false,
     weight: "1.2"
   },
-  {
-    name: "덕구",
-    birth: "2019-12-08",
-    gender: "남",
-    owner: "김흥수",
-    breed: "진돗개",
-    serial_number: "000000000000",
-    deposit: "0",
-    is_adopted: false,
-    nft_hash: "000000000000",
-    description:
-      "골격, 생김새, 크기 모두 건강하고 이쁜 진돗개 부모 사이에서 9마리를 출산하여 모두 키울 수 없어 분양하려고 합니다. 현재 4주 좀 넘어서 가장 이쁠 때 입니다. 현재 모유 먹고 곧 사료 불려 먹이려고 하고 있습니다. 모두 건강하고 이쁘며 건강하게 키워주실 분 지원바랍니다. ",
-    photo: "https://bit.ly/2OL7kjb",
-    is_neutralized: false,
-    weight: "0.9"
-  },
+
   {
     name: "비비",
     birth: "2019-11-29",
@@ -143,22 +113,7 @@ export const pets = [
     is_neutralized: false,
     weight: "1.0"
   },
-  {
-    name: "치즈",
-    birth: "2019-11-28",
-    gender: "여",
-    owner: "고희진",
-    breed: "믹스",
-    serial_number: "000000000000",
-    deposit: "0",
-    is_adopted: false,
-    nft_hash: "000000000000",
-    description:
-      "아빠 치와와랑 엄마 말티즈 사이에서 태어난 예쁜 여자 아이입니다. 조용하고 아주 귀여워요~ 평생 행복하게 함께 해주실 분만 연락 부탁 드립니다.  ",
-    photo: "https://bit.ly/37dekvP",
-    is_neutralized: false,
-    weight: "1.2"
-  },
+
   {
     name: "도비",
     birth: "2019-06-02",

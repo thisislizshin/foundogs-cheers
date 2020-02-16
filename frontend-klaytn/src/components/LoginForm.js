@@ -16,7 +16,7 @@ const Container = styled.div`
 
 const LogoImage = styled.img.attrs({
   src:
-    "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FbKOaeQ%2FbtqBS6LgGbU%2Fkdimkm8c9u6Mk63PaMzysK%2Fimg.png"
+    "https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FYyhgg%2FbtqBW0qMhwg%2FEridNoNdjA7EbwTzLdL8cK%2Fimg.png"
 })`
   width: 304px;
   margin-left: auto;

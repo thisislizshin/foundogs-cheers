@@ -4,8 +4,6 @@ import MakersFeed from "./presenter";
 const Container = props => {
   const { tabFeed, userAddress, status } = props;
 
-  console.log("---------", tabFeed);
-
   return (
     <MakersFeed feed={tabFeed} userAddress={userAddress} status={status} />
   );

@@ -4,6 +4,8 @@ import Avatar from "@material-ui/core/Avatar";
 import Chip from "@material-ui/core/Chip";
 import FaceIcon from "@material-ui/icons/Face";
 import DoneIcon from "@material-ui/icons/Done";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,6 +17,13 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: "#fbae17" },
+    secondary: { main: "#fbae17" }
+  }
+});
 
 export default function Chips() {
   const classes = useStyles();

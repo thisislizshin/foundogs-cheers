@@ -1,10 +1,9 @@
 import React from "react";
-import ProductInfo from "../ProductInfo";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import SliderSet from "components/SliderSet";
 import PetCard from "components/PetCard";
 import OptionBar from "components/OptionBar";
+import { pets } from "data/pets";
 
 const Container = styled.div`
   display: flex;
@@ -27,22 +26,6 @@ const FeedProduct = styled.div`
   }
 `;
 
-const ImageContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  img {
-    width: 100%;
-  }
-`;
-
-const InfoContainer = styled.div`
-  width: ${props => props.theme.maxCardWidth};
-  position: relative;
-  padding: 24px 24px 24px 10px;
-`;
-
 const FeedContainer = styled.div`
   position: relative;
   width: 100%;
@@ -55,14 +38,22 @@ const FeedContainer = styled.div`
 const MakersFeed = props => {
   const { feed } = props;
 
-  console.log("=================", feed);
-
   return (
     <Container>
       <OptionBar />
       <FeedContainer>
         {feed &&
           feed.map(pet => {
+            return (
+              <FeedProduct key={pet.tokenId}>
+                <Link to={`/makers/${pet.tokenId}`}>
+                  <PetCard pet={pet} />
+                </Link>
+              </FeedProduct>
+            );
+          })}
+        {pets &&
+          pets.map(pet => {
             return (
               <FeedProduct key={pet.tokenId}>
                 <Link to={`/makers/${pet.tokenId}`}>

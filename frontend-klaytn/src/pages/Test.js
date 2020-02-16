@@ -222,24 +222,24 @@ const _checkMyMakers = addressId => {
 // MyMakers 확인 (운영진)
 // --------------------------------------------------
 
-const _check_master = addressId => {
-  console.log("_check_master 호출 됨");
+// const _check_master = addressId => {
+//   console.log("_check_master 호출 됨");
 
-  MakersContract.methods
-    .showMyMakers(addressId)
-    .call()
-    .then(Makers => {
-      if (Makers.length === 0) {
-        console.log("해당되는 Makers가 없습니다.");
-        return 0;
-      }
-      console.log("-----------------------------");
-      for (let i = Makers.length; i > 0; i--) {
-        console.log(MakersContract.methods.getMakers(i));
-      }
-      console.log("-----------------------------");
-    });
-};
+//   MakersContract.methods
+//     .showMyMakers(addressId)
+//     .call()
+//     .then(Makers => {
+//       if (Makers.length === 0) {
+//         console.log("해당되는 Makers가 없습니다.");
+//         return 0;
+//       }
+//       console.log("-----------------------------");
+//       for (let i = Makers.length; i > 0; i--) {
+//         console.log(MakersContract.methods.getMakers(i));
+//       }
+//       console.log("-----------------------------");
+//     });
+// };
 
 // --------------------------------------------------
 // Makers 상태 확인함수.
@@ -462,6 +462,41 @@ const _investMakers = tokenId => {
     });
 };
 
+const _check_master = addressId => {
+  console.log("_check_master 호출 됨");
+  //const price = 10;
+  const FounDogs = "0xa52e40097628407d224beba260673fe831de5d16";
+  MakersContract.methods
+    .dogApply(1, 1, FounDogs)
+    .call()
+    .send({
+      from: getWallet().address,
+      gas: "200000000",
+      value: cav.utils.toPeb(price.toString(), "KLAY")
+    })
+    .once("transactionHash", txHash => {
+      console.log("txHash:", txHash);
+      ui.showToast({
+        status: "pending",
+        message: `Sending a transaction... (apply)`,
+        txHash
+      }).once("receipt", receipt => {
+        // ui.showToast({
+        //   status: receipt.status ? "success" : "fail",
+        //   message: `Received receipt! It means your transaction is
+        //     in klaytn block (#${receipt.blockNumber}) (uploadMakers)`,
+        //   link: receipt.transactionHash
+        // });
+        toast.success("Received receipt!");
+        console.log("-----------------");
+        //console.log("tokenId: ", tokenId);
+        console.log("————————");
+
+        sessionStorage.setItem("txList", receipt.transactionHash);
+      });
+    });
+};
+
 const price = 1;
 const TokenId = 1;
 // const txAddress =
@@ -605,9 +640,12 @@ const test = props => {
 
   // TODO: 529번 라인에서 txArray 에 DB 저장된 값이 들어가야함.
 
+  const FounDogs = "0xa52e40097628407d224beba260673fe831de5d16";
+
   return (
     <Container>
       <MakersHeader />
+      <Button onClick={() => _check_master(1, 1, FounDogs)}>Dog apply</Button>
       <Button onClick={remove} value={TokenId}>
         refund
       </Button>

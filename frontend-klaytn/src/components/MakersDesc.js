@@ -14,12 +14,12 @@ const StyledSwitch = withStyles({
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
   width: ${props => props.theme.maxCardWidth};
+  justify-content: center;
 `;
 
 const Description = styled.p`
-  width: 96%;
+  width: 90%;
   font-size: 16px;
   margin-bottom: 18px;
   font-weight: 100;

@@ -78,12 +78,6 @@ const Wrapper = styled.div`
 
 const Filter = () => {
   const classes = useStyles();
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-
   return (
     <Wrapper>
       <div className={classes.search}>
@@ -91,7 +85,7 @@ const Filter = () => {
           <SearchIcon />
         </div>
         <InputBase
-          placeholder="서울시 강남구"
+          placeholder="Search.."
           classes={{
             root: classes.inputRoot,
             input: classes.inputInput
